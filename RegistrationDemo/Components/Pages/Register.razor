@@ -1,0 +1,67 @@
+﻿@page "/"
+@inject HttpClient Http
+@inject NavigationManager Nav
+@using RegistrationDemo.Models
+@using System.ComponentModel.DataAnnotations
+@using Microsoft.AspNetCore.Components.Forms
+
+@inject ILogger<RegisterRequest> Logger
+
+@using RegistrationDemo.Components.Pages
+
+<h3>Register</h3>
+
+<EditForm Model="@model" OnValidSubmit="@HandleValidSubmit" FormName="RegistrationForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    @if (!string.IsNullOrEmpty(serverError))
+    {
+        <div class="alert alert-danger">@serverError</div>
+    }
+
+    <div class="mb-3">
+        <label>Username</label>
+        <InputText @bind-Value="model.Username" class="form-control" />
+        <ValidationMessage For="@(() => model.Username)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Email</label>
+        <InputText @bind-Value="model.Email" type="email" class="form-control" />
+        <ValidationMessage For="@(() => model.Email)" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <InputText @bind-Value="model.Password" type="password" class="form-control" />
+        <ValidationMessage For="@(() => model.Password)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</EditForm>
+
+@code {
+    private RegisterRequest model = new RegisterRequest();
+    private string? serverError;
+
+    private async Task HandleValidSubmit()
+    {
+        serverError = string.Empty;
+
+        var response = await Http.PostAsJsonAsync("/api/register", model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Nav.NavigateTo($"/success/{model.Username}");
+        }
+        else
+        {
+            var problem = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+            problem ??= new();
+            serverError = problem.TryGetValue("error", out var msg)
+                ? msg
+                : "Registration failed.";
+        }
+    }
+}

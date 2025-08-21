@@ -1,0 +1,47 @@
+﻿@page "/index"
+@inject HttpClient Http
+@inject NavigationManager Nav
+@using RegistrationDemo.Models;
+
+<h3>Registered Users</h3>
+
+<button class="btn btn-primary mb-2" @onclick='() => Nav.NavigateTo("/register")'>Register New</button>
+
+@if (users == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (users.Count == 0)
+{
+    <p>No users registered yet.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach (var u in users)
+        {
+            <tr>
+                <td>@u.Username</td>
+                <td>@u.Email</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<UserDto>? users;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Http.BaseAddress ??= new Uri(Nav.BaseUri);
+        users = await Http.GetFromJsonAsync<List<UserDto>>("/api/users");
+    }
+}
