@@ -13,6 +13,7 @@ C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\RegistrationDemo.
 C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\RegistrationDemo.AssemblyInfo.cs
 C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\RegistrationDemo.csproj.CoreCompileInputs.cache
 C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\RegistrationDemo.MvcApplicationPartsAssemblyInfo.cache
+C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\RegistrationDemo.sourcelink.json
 C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\projects\RegistrationDemo\RegistrationDemo\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

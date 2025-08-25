@@ -5,37 +5,33 @@
 @using System.ComponentModel.DataAnnotations
 @using Microsoft.AspNetCore.Components.Forms
 
-@inject ILogger<RegisterRequest> Logger
-
 @using RegistrationDemo.Components.Pages
 
 <h3>Register</h3>
 
-<EditForm Model="@model" OnValidSubmit="@HandleValidSubmit" FormName="RegistrationForm">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
+<EditForm Model="@model" OnValidSubmit="HandleValidSubmit" FormName="RegisterForm">
+    @* <DataAnnotationsValidator /> *@
+    @*<ValidationSummary /> *@
     @if (!string.IsNullOrEmpty(serverError))
     {
         <div class="alert alert-danger">@serverError</div>
     }
-
     <div class="mb-3">
         <label>Username</label>
-        <InputText @bind-Value="model.Username" class="form-control" />
-        <ValidationMessage For="@(() => model.Username)" />
+        <InputText @bind-Value=@model.Username class="form-control" />
+        <ValidationMessage For="@(() => @model.Username)" />
     </div>
 
     <div class="mb-3">
         <label>Email</label>
-        <InputText @bind-Value="model.Email" type="email" class="form-control" />
-        <ValidationMessage For="@(() => model.Email)" />
+        <InputText @bind-Value=@model.Email type="email" class="form-control" />
+        <ValidationMessage For="@(() => @model.Email)" />
     </div>
 
     <div class="mb-3">
         <label>Password</label>
-        <InputText @bind-Value="model.Password" type="password" class="form-control" />
-        <ValidationMessage For="@(() => model.Password)" />
+        <InputText @bind-Value=@model.Password type="password" class="form-control" />
+        <ValidationMessage For="@(() => @model.Password)" />
     </div>
 
     <button type="submit" class="btn btn-primary">Register</button>
@@ -48,8 +44,9 @@
     private async Task HandleValidSubmit()
     {
         serverError = string.Empty;
-
+        Console.WriteLine($"Submitting: {model.Username}, {model.Email}, {model.Password}");
         var response = await Http.PostAsJsonAsync("/api/register", model);
+        Console.WriteLine($"Response: {response.StatusCode}");
 
         if (response.IsSuccessStatusCode)
         {

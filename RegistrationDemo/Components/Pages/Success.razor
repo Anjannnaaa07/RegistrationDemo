@@ -4,11 +4,6 @@
 <h3>Registration Successful </h3>
 <p>Welcome, <strong>@username</strong>!</p>
 
-<button class="btn btn-secondary" @onclick='() => Nav.NavigateTo("/")'>
-    Register another
-</button>
-<a class="btn btn-link" href="/">Go Home</a>
-
 @code {
     [Parameter] public string? username { get; set; }
 }
