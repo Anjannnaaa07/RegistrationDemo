@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Antiforgery;
+using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using RegistrationDemo.Components;
+using RegistrationDemo.Hubs;
 using RegistrationDemo.Models;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +16,7 @@ builder.Services.AddHttpClient("ServerAPI", client =>
 });
 
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("ServerAPI"));
+builder.Services.AddSingleton<RegistrationDemo.Services.AuthState>();
 
 var users = new List<UserDto>();
 
@@ -23,7 +27,7 @@ app.MapGet("/api/users", () =>
     return Results.Ok(users);
 }).DisableAntiforgery();
 
-app.MapPost("/api/register", ([FromBody]RegisterRequest request) =>
+app.MapPost("/api/register", ([FromBody]RegistrationDemo.Models.RegisterRequest request) =>
 {
     if (string.IsNullOrWhiteSpace(request.Username) ||
         string.IsNullOrWhiteSpace(request.Email) ||
@@ -41,10 +45,28 @@ app.MapPost("/api/register", ([FromBody]RegisterRequest request) =>
     {
         Username = request.Username,
         Email = request.Email,
+        Password = request.Password
     };
     users.Add(user);
     return Results.Created($"/api/users/{user.Username}", user);
 }).DisableAntiforgery();
+
+app.MapPost("/api/login", ([FromBody] RegistrationDemo.Models.LoginRequest request) =>
+{
+    var user = users.FirstOrDefault(u =>
+        u.Username.Equals(request.Username, StringComparison.OrdinalIgnoreCase) &&
+        u.Password == request.Password);
+
+    if (user == null)
+    {
+        return Results.BadRequest(new { error = "Invalid username or password." });
+    }
+
+    return Results.Ok(new UserDto { Username = user.Username, Email = user.Email });
+}).DisableAntiforgery();
+
+app.MapHub<ChatHub>("/chathub");
+
 
 if (!app.Environment.IsDevelopment())
 {

@@ -1,0 +1,53 @@
+﻿@page "/login"
+@inject HttpClient Http
+@inject NavigationManager Nav
+@inject RegistrationDemo.Services.AuthState Auth
+
+<h3>Login</h3>
+
+<EditForm Model="@model" OnValidSubmit="HandleValidSubmit" FormName="LoginForm">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    @if (!string.IsNullOrEmpty(serverError))
+    {
+        <div class="alert alert-danger">@serverError</div>
+    }
+
+    <div class="mb-3">
+        <label>Username</label>
+        <InputText @bind-Value="model.Username" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label>Password</label>
+        <InputText @bind-Value="model.Password" type="password" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Login</button>
+</EditForm>
+
+@code {
+    [SupplyParameterFromForm]
+    private RegistrationDemo.Models.LoginRequest model { get; set; }
+    protected override void OnInitialized() => model ??= new();
+    private string? serverError;
+
+    private async Task HandleValidSubmit()
+    {
+        serverError = string.Empty;
+        var response = await Http.PostAsJsonAsync("/api/login", model);
+
+        if (response.IsSuccessStatusCode)
+        {
+            var user = await response.Content.ReadFromJsonAsync<RegistrationDemo.Models.UserDto>();
+            Auth.CurrentUser = user;
+            Nav.NavigateTo("/chat");
+        }
+        else
+        {
+            var problem = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+            serverError = problem?["error"] ?? "Login failed.";
+        }
+    }
+}

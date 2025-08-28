@@ -10,35 +10,37 @@
 <h3>Register</h3>
 
 <EditForm Model="@model" OnValidSubmit="HandleValidSubmit" FormName="RegisterForm">
-    @* <DataAnnotationsValidator /> *@
-    @*<ValidationSummary /> *@
+    <DataAnnotationsValidator /> 
+    <ValidationSummary /> 
     @if (!string.IsNullOrEmpty(serverError))
     {
         <div class="alert alert-danger">@serverError</div>
     }
     <div class="mb-3">
         <label>Username</label>
-        <InputText @bind-Value=@model.Username class="form-control" />
-        <ValidationMessage For="@(() => @model.Username)" />
+        <InputText id="username" @bind-Value=@model.Username class="form-control" />
+        <ValidationMessage For="@(() => model.Username)" />
     </div>
 
     <div class="mb-3">
         <label>Email</label>
-        <InputText @bind-Value=@model.Email type="email" class="form-control" />
-        <ValidationMessage For="@(() => @model.Email)" />
+        <InputText id="email" @bind-Value=@model.Email type="email" class="form-control" />
+        <ValidationMessage For="@(() => model.Email)" />
     </div>
 
     <div class="mb-3">
         <label>Password</label>
-        <InputText @bind-Value=@model.Password type="password" class="form-control" />
-        <ValidationMessage For="@(() => @model.Password)" />
+        <InputText id="password" @bind-Value=@model.Password type="password" class="form-control" />
+        <ValidationMessage For="@(() => model.Password)" />
     </div>
 
     <button type="submit" class="btn btn-primary">Register</button>
 </EditForm>
 
 @code {
-    private RegisterRequest model = new RegisterRequest();
+    [SupplyParameterFromForm]
+    private RegisterRequest model { get; set; }
+    protected override void OnInitialized() => model ??= new();
     private string? serverError;
 
     private async Task HandleValidSubmit()
@@ -56,9 +58,7 @@
         {
             var problem = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
             problem ??= new();
-            serverError = problem.TryGetValue("error", out var msg)
-                ? msg
-                : "Registration failed.";
+            serverError = problem.TryGetValue("error", out var msg) ? msg: "Registration failed.";
         }
     }
 }

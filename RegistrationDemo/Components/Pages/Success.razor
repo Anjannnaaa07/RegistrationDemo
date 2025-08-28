@@ -3,6 +3,7 @@
 
 <h3>Registration Successful </h3>
 <p>Welcome, <strong>@username</strong>!</p>
+<button class="btn btn-primary" @onclick='() => Nav.NavigateTo("/")'>Go Home</button>
 
 @code {
     [Parameter] public string? username { get; set; }
