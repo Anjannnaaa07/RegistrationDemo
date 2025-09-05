@@ -1,12 +1,18 @@
 using Microsoft.AspNetCore.Antiforgery;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using RegistrationDemo.Components;
+using RegistrationDemo.Data;
 using RegistrationDemo.Hubs;
 using RegistrationDemo.Models;
+using RegistrationDemo.Services;
 
-
+//dependency injection
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddRazorComponents().AddInteractiveServerComponents();
 
@@ -16,56 +22,22 @@ builder.Services.AddHttpClient("ServerAPI", client =>
 });
 
 builder.Services.AddScoped(sp => sp.GetRequiredService<IHttpClientFactory>().CreateClient("ServerAPI"));
-builder.Services.AddSingleton<RegistrationDemo.Services.AuthState>();
 
-var users = new List<UserDto>();
+builder.Services.AddScoped<IAuthState, AuthState>();
+
+
+builder.Services.AddControllers(options =>
+{
+    options.SuppressImplicitRequiredAttributeForNonNullableReferenceTypes = true;
+});
+
 
 var app = builder.Build();
 
-app.MapGet("/api/users", () =>
-{
-    return Results.Ok(users);
-}).DisableAntiforgery();
-
-app.MapPost("/api/register", ([FromBody]RegistrationDemo.Models.RegisterRequest request) =>
-{
-    if (string.IsNullOrWhiteSpace(request.Username) ||
-        string.IsNullOrWhiteSpace(request.Email) ||
-        string.IsNullOrWhiteSpace(request.Password))
-    {
-        return Results.BadRequest(new { error = "All fields are required." });
-    }
-
-    if (users.Any(u => u.Username.Equals(request.Username, StringComparison.OrdinalIgnoreCase)))
-    {
-        return Results.BadRequest(new { error = "Username already exists." });
-    }
-
-    var user = new UserDto
-    {
-        Username = request.Username,
-        Email = request.Email,
-        Password = request.Password
-    };
-    users.Add(user);
-    return Results.Created($"/api/users/{user.Username}", user);
-}).DisableAntiforgery();
-
-app.MapPost("/api/login", ([FromBody] RegistrationDemo.Models.LoginRequest request) =>
-{
-    var user = users.FirstOrDefault(u =>
-        u.Username.Equals(request.Username, StringComparison.OrdinalIgnoreCase) &&
-        u.Password == request.Password);
-
-    if (user == null)
-    {
-        return Results.BadRequest(new { error = "Invalid username or password." });
-    }
-
-    return Results.Ok(new UserDto { Username = user.Username, Email = user.Email });
-}).DisableAntiforgery();
+app.MapControllers();
 
 app.MapHub<ChatHub>("/chathub");
+
 
 
 if (!app.Environment.IsDevelopment())

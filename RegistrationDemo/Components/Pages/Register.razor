@@ -39,7 +39,7 @@
 
 @code {
     [SupplyParameterFromForm]
-    private RegisterRequest model { get; set; }
+    private UserRegistrationRequest model { get; set; }
     protected override void OnInitialized() => model ??= new();
     private string? serverError;
 
@@ -47,7 +47,8 @@
     {
         serverError = string.Empty;
         Console.WriteLine($"Submitting: {model.Username}, {model.Email}, {model.Password}");
-        var response = await Http.PostAsJsonAsync("/api/register", model);
+        var response = await Http.PostAsJsonAsync("/api/users/register", model);
+       // var response = await Http.PostAsJsonAsync("/api/register", model);
         Console.WriteLine($"Response: {response.StatusCode}");
 
         if (response.IsSuccessStatusCode)

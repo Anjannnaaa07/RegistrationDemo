@@ -2,8 +2,10 @@
 @inject HttpClient Http
 @inject NavigationManager Nav
 @using RegistrationDemo.Models;
+@rendermode InteractiveServer
 
 <h3>Registered Users</h3>
+
 @if (users == null)
 {
     <p><em>Loading...</em></p>
@@ -17,6 +19,7 @@ else
     <table class="table">
         <thead>
             <tr>
+                <th>Select</th>
                 <th>Username</th>
                 <th>Email</th>
             </tr>
@@ -25,14 +28,17 @@ else
             @foreach (var user in users)
             {
                 <tr>
+                    <td>
+                        <input type="checkbox" @bind="user.IsSelected" />
+                    </td>
                     <td>@user.Username</td>
                     <td>@user.Email</td>
                 </tr>
             }
         </tbody>
     </table>
-    <button class="btn btn-primary mb-2" @onclick='() => Nav.NavigateTo("")'>View Content</button>
 
+    <button type="button" class="btn btn-danger mb-2" @onclick=DeleteSelected>Delete Selected</button>
 }
 
 @code {
@@ -42,5 +48,20 @@ else
     {
         Http.BaseAddress ??= new Uri(Nav.BaseUri);
         users = await Http.GetFromJsonAsync<List<UserDto>>("/api/users");
+    }
+
+    private void DeleteSelected()
+    {
+        var selectedUsers = users!.Where(u => u.IsSelected).ToList();
+
+        foreach (var user in selectedUsers)
+        {
+            var response = Http.DeleteAsync($"/api/users/{user.Username}").Result;
+            Console.WriteLine($"Deleting user: {user.Username}");
+            if (response.IsSuccessStatusCode)
+            {
+                users.Remove(user);
+            }
+        }
     }
 }

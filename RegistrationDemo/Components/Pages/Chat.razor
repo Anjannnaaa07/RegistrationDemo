@@ -1,11 +1,13 @@
 ﻿@page "/chat"
 @using Microsoft.AspNetCore.SignalR.Client
-@inject RegistrationDemo.Services.AuthState Auth
+@inject RegistrationDemo.Services.IAuthState Auth
+@rendermode InteractiveServer
+
 @inject NavigationManager Nav
 
 <h3>Chat Room</h3>
 
-@if (!Auth.IsLoggedIn)
+@if (!Auth.IsLoggedIn())
 {
     <p>You must <a href="/login">log in</a> to chat.</p>
 }
@@ -21,7 +23,7 @@ else
     <input @bind-value="currentMessage"
            @bind-value:event="oninput" />
 
-    <button @onclick="SendMessage">Send</button>
+    <button type="button" @onclick="SendMessage">Send</button>
 }
 
 @code {
@@ -31,7 +33,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        if (!Auth.IsLoggedIn) return;
+        if (!Auth.IsLoggedIn()) return;
 
         hubConnection = new HubConnectionBuilder()
             .WithUrl($"{Nav.BaseUri}chathub")
@@ -56,12 +58,11 @@ else
 
     private async Task SendMessage()
     {
-        Console.WriteLine("SendMessage method called");
-        if (!string.IsNullOrWhiteSpace(currentMessage))
+        if (!string.IsNullOrWhiteSpace(currentMessage) && Auth.CurrentUser != null)
         {
-            Console.WriteLine($"Sending message: {currentMessage}");
-            await hubConnection!.SendAsync("SendMessage", Auth.CurrentUser!.Username, currentMessage);
+            await hubConnection!.SendAsync("SendMessage", Auth.CurrentUser.Username, currentMessage);
             currentMessage = string.Empty;
         }
     }
+
 }

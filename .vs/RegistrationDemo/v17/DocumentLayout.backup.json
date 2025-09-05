@@ -3,32 +3,24 @@
   "WorkspaceRootPath": "C:\\projects\\RegistrationDemo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\components\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\components\\pages\\chat.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{93C74679-41FD-4054-A39C-0385E8B631D8}|RegistrationDemoTests\\RegistrationDemoTests.csproj|c:\\projects\\registrationdemo\\registrationdemotests\\services\\authstatetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C74679-41FD-4054-A39C-0385E8B631D8}|RegistrationDemoTests\\RegistrationDemoTests.csproj|solutionrelative:registrationdemotests\\services\\authstatetests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{93C74679-41FD-4054-A39C-0385E8B631D8}|RegistrationDemoTests\\RegistrationDemoTests.csproj|c:\\projects\\registrationdemo\\registrationdemotests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93C74679-41FD-4054-A39C-0385E8B631D8}|RegistrationDemoTests\\RegistrationDemoTests.csproj|solutionrelative:registrationdemotests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\components\\pages\\register.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\components\\pages\\index.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\components\\pages\\success.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\components\\pages\\success.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|c:\\projects\\registrationdemo\\registrationdemo\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2CFF2269-C998-4732-A33B-DEBB827CCFDA}|RegistrationDemo\\RegistrationDemo.csproj|solutionrelative:registrationdemo\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,8 +30,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Program.cs",
+              "RelativeDocumentMoniker": "RegistrationDemo\\Program.cs",
+              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Program.cs",
+              "RelativeToolTip": "RegistrationDemo\\Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-03T04:29:15.213Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "RegistrationDemo\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "RegistrationDemo\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAmwGAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T17:53:55.042Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -50,93 +68,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ChatHub.cs",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Hubs\\ChatHub.cs",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Hubs\\ChatHub.cs",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Hubs\\ChatHub.cs",
-              "RelativeToolTip": "RegistrationDemo\\Hubs\\ChatHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T16:05:46.562Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Chat.razor",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Chat.razor",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Components\\Pages\\Chat.razor",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Chat.razor",
-              "RelativeToolTip": "RegistrationDemo\\Components\\Pages\\Chat.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-28T15:53:35.449Z",
+              "Title": "AuthStateTests.cs",
+              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemoTests\\Services\\AuthStateTests.cs",
+              "RelativeDocumentMoniker": "RegistrationDemoTests\\Services\\AuthStateTests.cs",
+              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemoTests\\Services\\AuthStateTests.cs",
+              "RelativeToolTip": "RegistrationDemoTests\\Services\\AuthStateTests.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAIwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T16:20:12.551Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Success.razor",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Success.razor",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Components\\Pages\\Success.razor",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Success.razor",
-              "RelativeToolTip": "RegistrationDemo\\Components\\Pages\\Success.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-28T15:49:37.811Z",
+              "DocumentIndex": 1,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemoTests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "RegistrationDemoTests\\UnitTest1.cs",
+              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemoTests\\UnitTest1.cs",
+              "RelativeToolTip": "RegistrationDemoTests\\UnitTest1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T16:12:56.107Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Register.razor",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Register.razor",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Components\\Pages\\Register.razor",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Register.razor",
-              "RelativeToolTip": "RegistrationDemo\\Components\\Pages\\Register.razor",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACQAAAAMAAAAAAAAAA==",
+              "Title": "Index.razor",
+              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Index.razor",
+              "RelativeDocumentMoniker": "RegistrationDemo\\Components\\Pages\\Index.razor",
+              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Index.razor",
+              "RelativeToolTip": "RegistrationDemo\\Components\\Pages\\Index.razor",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAACQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-28T15:42:45.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Models\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Models\\RegisterRequest.cs",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Models\\RegisterRequest.cs",
-              "RelativeToolTip": "RegistrationDemo\\Models\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T15:42:11.251Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Program.cs",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Program.cs",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Program.cs",
-              "RelativeToolTip": "RegistrationDemo\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-28T15:34:03.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.razor",
-              "DocumentMoniker": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Login.razor",
-              "RelativeDocumentMoniker": "RegistrationDemo\\Components\\Pages\\Login.razor",
-              "ToolTip": "C:\\projects\\RegistrationDemo\\RegistrationDemo\\Components\\Pages\\Login.razor",
-              "RelativeToolTip": "RegistrationDemo\\Components\\Pages\\Login.razor",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwCwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-28T15:30:44.565Z",
+              "WhenOpened": "2025-09-03T04:33:31.801Z",
               "EditorCaption": ""
             }
           ]

@@ -1,7 +1,8 @@
 ﻿@page "/login"
 @inject HttpClient Http
 @inject NavigationManager Nav
-@inject RegistrationDemo.Services.AuthState Auth
+@inject RegistrationDemo.Services.IAuthState Auth
+
 
 <h3>Login</h3>
 
@@ -36,12 +37,12 @@
     private async Task HandleValidSubmit()
     {
         serverError = string.Empty;
-        var response = await Http.PostAsJsonAsync("/api/login", model);
+        var response = await Http.PostAsJsonAsync("/api/users/login", model);
 
         if (response.IsSuccessStatusCode)
         {
             var user = await response.Content.ReadFromJsonAsync<RegistrationDemo.Models.UserDto>();
-            Auth.CurrentUser = user;
+            Auth.Login(user);
             Nav.NavigateTo("/chat");
         }
         else

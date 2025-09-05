@@ -1,8 +1,26 @@
-﻿namespace RegistrationDemo.Services
+﻿using RegistrationDemo.Models;
+
+namespace RegistrationDemo.Services
 {
-    public class AuthState
+    public class AuthState : IAuthState
     {
-        public Models.UserDto? CurrentUser { get; set; }
-        public bool IsLoggedIn => CurrentUser != null;
+        public UserDto? _currentUser;
+
+        public bool IsLoggedIn()
+        {
+            return _currentUser != null;
+        }
+
+        public void Login(UserDto user)
+        {
+            _currentUser = user;
+        }
+
+        public void Logout()
+        {
+            _currentUser = null;
+        }
+
+        public UserDto? CurrentUser => _currentUser;
     }
 }
